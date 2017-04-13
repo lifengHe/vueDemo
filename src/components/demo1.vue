@@ -32,6 +32,9 @@
 </script>
 
 <style type="text/less" lang="less" scoped>
+.active:hover {
+  cursor: pointer;
+}
 .green {
   color: green;
 }

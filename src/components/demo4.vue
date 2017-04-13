@@ -1,7 +1,7 @@
 <template>
 	<div class="demo4">
 		<ul>
-	      <li v-for="(article, i) in articles">
+	      <li @click="showTips(i)" v-for="(article, i) in articles">
 	        <span>{{i + 1}}</span>、{{article.title}}
 	      </li>
     	</ul>
@@ -16,13 +16,20 @@
       	articles: []
       }
     },
-	mounted: function() {
-		this.$http.jsonp('https://api.douban.com/v2/movie/top250', {count: 20}, {
+    methods: {
+    	showTips(i) {
+    		alert(this.articles[i].title);
+    	}
+    },
+	mounted() {
+		this.$http.jsonp('https://api.douban.com/v2/movie/top250', {
 	      headers: {},
-          emulateJSON: true
+	      params: {
+		  	count: 20
+		  }
     	}).then(function(data) {
 			this.articles = data.data.subjects;
-		})
+		});
 	}    
   }
 </script>

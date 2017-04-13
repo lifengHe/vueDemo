@@ -50,11 +50,13 @@ export default {
   name: 'demo3',
   data () {
     return {
+      // person对象
 	    newPerson: {
         name: '',
         age: 0,
         sex: 'Male'
       },
+      // people列表
       people: [{
         name: 'Jack',
         age: 30,
@@ -75,14 +77,16 @@ export default {
     }
   },
   methods: {
-    createPerson: function(){
+    createPerson() {
+      // debugger;
       this.people.push(this.newPerson);
       // 添加完newPerson对象后，重置newPerson对象
-      this.newPerson = {name: '', age: 0, sex: 'Male'}
+      // debugger; 
+      this.newPerson = {name: '', age: 0, sex: 'Male'};
     },
-    deletePerson: function(index){
+    deletePerson(index) {
       // 删一个数组元素
-      this.people.splice(index,1);
+      this.people.splice(index, 1);
     }
   }
 }

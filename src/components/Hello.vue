@@ -7,7 +7,6 @@
       <li><router-link to="/demo3">demo3</router-link></li>
       <li><router-link to="/demo4">demo4</router-link></li>
     </ul>
-    
   </div>
 </template>
 
